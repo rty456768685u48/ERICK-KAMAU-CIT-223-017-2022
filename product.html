@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERICK KAMAU CIT-223-017/2022 </title>
+    <style>
+        /* CSS Here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(196, 180, 180);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header, footer {
+            background-color: rgb(196, 200, 180);
+            color: #fff;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Dark mode styling */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        /* Back to Top button */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tutoring Website Features</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="enquire.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <!-- Dark Mode Toggle -->
+        <button id="dark-mode-toggle" class="btn">Toggle Dark Mode</button>
+    </header>
+
+    <!-- Your content sections here... -->
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" onclick="scrollToTop()">Back to Top</div>
+
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="enquire.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Tutoring App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Dark mode functionality
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const bodyElement = document.body;
+
+        darkModeToggle.addEventListener('click', function () {
+            bodyElement.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

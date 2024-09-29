@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9dbcc6;
+        }
+
+        header {
+            background-color: rgb(196, 200, 180);
+            color: #fff;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgb(196, 200, 180);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            width: calc(100% - 20px);
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .bytn {
+            background-color: blue;
+            color: wheat;
+            width: 20%;
+            height: 2rem;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bytn:hover {
+            background-color: darkblue;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            top: 3rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced Contact Us Form</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="enquire.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <form id="enhancedForm">
+            <img src="image7.jpg" alt="">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="gender">Gender</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+
+            <label for="preferences">Preferred Contact Method</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="emailContact" name="contactMethod" value="Email">
+                <label for="emailContact">Email</label>
+
+                <input type="checkbox" id="phoneContact" name="contactMethod" value="Phone">
+                <label for="phoneContact">Phone</label>
+
+                <input type="checkbox" id="textMessage" name="contactMethod" value="Text Message">
+                <label for="textMessage">Text Message</label>
+            </div>
+
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry" name="inquiry">
+                <option value="general">General Inquiry</option>
+                <option value="product">Product Support</option>
+                <option value="billing">Billing Question</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <label for="fileUpload">Attach a file (optional)</label>
+            <input type="file" id="fileUpload" name="fileUpload">
+
+            <input class="bytn" type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="enquire.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Tutoring App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle form validation and enhancements
+        document.getElementById("enhancedForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in the required fields.");
+            } else {
+                alert("Thank you for your submission!");
+                document.getElementById("enhancedForm").reset(); // Reset form after submission
+            }
+        });
+    </script>
+</body>
+</html>

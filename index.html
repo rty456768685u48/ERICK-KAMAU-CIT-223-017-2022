@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERICK KAMAU CIT-223-017/2022 </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(196, 180, 180);
+        }
+        header {
+            background-color: rgb(196, 200, 180);
+            color: #fff;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+        #Intro {
+            height: 250px;
+            margin: 0px 20px 5px 0px;
+        }
+        #image1 {
+            float: left;
+            padding: 20px;
+        }
+        #image1 img {
+            border-radius: 5px;
+            height: 200px;
+            width: 200px;
+        }
+        #Introtext {
+            padding: 10px 20px;
+            margin-left: 10px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            top: 3rem;
+        }
+        .footer p {
+            margin: 0;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Wezesha</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="enquire.html">Contact us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="features">
+        <h1>Why choose Wezesha Tutoring?</h1>
+        <div id="Intro">
+            <div id="image1">
+                <img src="image1.jpg" alt="Study image" width="100">
+            </div>
+            <div id="Introtext">
+                <p>At Wezesha Tutoring, we believe that every student has the potential to excel academically...</p>
+            </div>
+        </div>
+        <ul>
+            <li><strong>Personalised Learning Plans:</strong> We create customized learning plans designed to meet individual goals and learning styles.</li>
+            <li><strong>Qualified and Engaging Tutors:</strong> Our team consists of highly qualified tutors who are passionate about education and dedicated to helping students succeed.</li>
+            <li><strong>Interactive Online Platform:</strong> Our innovative online platform offers interactive lessons, virtual whiteboards, and multimedia resources.</li>
+            <li><strong>Flexible Scheduling:</strong> We offer flexible scheduling options to accommodate your timetable, including evening and weekend sessions.</li>
+            <li><strong>Progress Tracking and Feedback:</strong> Our tutors provide regular feedback on student performance and track progress over time.</li>
+        </ul>
+    </section>
+    
+    <section id="cta">
+        <a href="product.html" class="btn">Learn More</a>
+    </section>
+    
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="enquire.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Tutoring App. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Enhancements -->
+    <script>
+        // Dynamic Greeting Message
+        window.onload = function() {
+            const greetingElement = document.querySelector("header h1");
+            const hour = new Date().getHours();
+            let greetingMessage;
+
+            if (hour < 12) {
+                greetingMessage = "Good Morning! Welcome to Wezesha";
+            } else if (hour < 18) {
+                greetingMessage = "Good Afternoon! Welcome to Wezesha";
+            } else {
+                greetingMessage = "Good Evening! Welcome to Wezesha";
+            }
+
+            greetingElement.textContent = greetingMessage;
+        };
+
+        // Image Hover Effect
+        const image = document.querySelector("#image1 img");
+        image.addEventListener("mouseover", function() {
+            this.src = "hovered-image.jpg";
+        });
+        image.addEventListener("mouseout", function() {
+            this.src = "image1.jpg";
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
